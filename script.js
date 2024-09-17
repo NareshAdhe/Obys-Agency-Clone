@@ -46,12 +46,6 @@ tl.to(".loader",{
     delay:-1
 })
 
-tl.to('.main',{
-    display:"block",
-    delay:-1,
-    ease:Power4
-})
-
 tl.from('.page1',{
     y:1200,
     opacity: 0,
