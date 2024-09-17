@@ -1,5 +1,5 @@
 function loadingAnimation() {
-    var tl = gsap.timeline();
+var tl = gsap.timeline();
 tl.from('.line h1', {
     y: 150,
     stagger: 0.25,
@@ -17,7 +17,7 @@ tl.from('.line1-part1', {
                 h5Timer.innerHTML = grow++;
             }
             else h5Timer.innerHTML = 100;
-        }, 25)
+        }, 20)
     }
 })
 
@@ -31,7 +31,7 @@ tl.to('.line h2',{
 tl.to(".loader", {
     opacity: 0,
     duration: 0.4,
-    delay: 2.5
+    delay: 2
 })
 
 tl.to('.line h1', {
@@ -41,16 +41,51 @@ tl.to('.line h1', {
     delay:-.2
 })
 
-tl.from('.page1',{
-    y:1200,
-    opacity: 0,
-    delay: 0.2,
+tl.to(".loader",{
+    display:"none",
+    delay:-1
+})
+
+tl.to('.main',{
+    display:"block",
+    delay:-1,
     ease:Power4
 })
 
-tl.to(".loader",{
-    display:"none"
+tl.from('.page1',{
+    y:1200,
+    opacity: 0,
+    delay: -.5,
+    ease:Power4
 })
+
+tl.from('.hero',{
+    y: 150,
+    stagger: 0.15,
+    duration: 0.3,
+    opacity:0,
+    ease:Power4
+})
+
+tl.from('.page1 .navbar svg,.page1 .navbar .nav-right li',{
+    y:-10,
+    stagger:.2,
+    duration:.3,
+    opacity:0,
+    delay:.1
+})
+}
+function cursor() {
+    document.addEventListener("mousemove",(e) => {
+        console.log(e);
+        
+        gsap.to(".cursor",{
+            left:e.clientX,
+            top:e.clientY,
+        })
+    })
+    Shery.makeMagnet(".nav-right li,.navbar svg");
 }
 
 loadingAnimation();
+cursor();
