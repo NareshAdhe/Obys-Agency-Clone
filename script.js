@@ -23,13 +23,22 @@ tl.from('.line1-part1', {
 
 tl.to('.line h2',{
     animationName:'anime',
-    opacity:1
+    opacity:1,
+    delay:-0.3
 })
+
 
 tl.to(".loader", {
     opacity: 0,
     duration: 0.4,
-    delay: 3.5
+    delay: 2.5
+})
+
+tl.to('.line h1', {
+    stagger: 0.25,
+    duration: 0.3,
+    opacity: 0,
+    delay:-.2
 })
 
 tl.from('.page1',{
