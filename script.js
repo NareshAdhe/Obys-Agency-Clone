@@ -27,37 +27,24 @@ tl.to('.line h2',{
     delay:-0.3
 })
 
-
 tl.to(".loader", {
     opacity: 0,
     duration: 0.4,
-    delay: 2
+    delay:2
 })
-
-tl.to('.line h1', {
-    stagger: 0.25,
-    duration: 0.3,
+.to('.line h1', {
     opacity: 0,
-    delay:-.2
+    duration:.5,
 })
-
-tl.to(".loader",{
+.to(".loader",{
     display:"none",
-    delay:-1
+    delay:-0.8
 })
 
 tl.from('.page1',{
     y:1200,
     opacity: 0,
-    delay: -.5,
-    ease:Power4
-})
-
-tl.from('.hero',{
-    y: 150,
-    stagger: 0.15,
-    duration: 0.3,
-    opacity:0,
+    delay: -0.85,
     ease:Power4
 })
 
@@ -66,7 +53,14 @@ tl.from('.page1 .navbar svg,.page1 .navbar .nav-right li',{
     stagger:.2,
     duration:.3,
     opacity:0,
-    delay:.1
+})
+
+tl.from('.hero',{
+    y: 50,
+    stagger: 0.15,
+    duration: 0.5,
+    opacity:0,
+    ease:Power4
 })
 }
 function cursor() {
