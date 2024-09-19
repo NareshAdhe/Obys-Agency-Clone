@@ -17,50 +17,48 @@ tl.from('.line1-part1', {
                 h5Timer.innerHTML = grow++;
             }
             else h5Timer.innerHTML = 100;
-        }, 20)
+        }, 30)
     }
 })
 
 tl.to('.line h2',{
     animationName:'anime',
     opacity:1,
-    delay:-0.3
+    delay: -0.3,
+})
+
+tl.to('.line', {
+    opacity: 0,
+    duration:.3,
+    delay:2.8
 })
 
 tl.to(".loader", {
-    opacity: 0,
-    duration: 0.4,
-    delay:2
-})
-.to('.line h1', {
-    opacity: 0,
-    duration:.5,
-})
-.to(".loader",{
-    display:"none",
-    delay:-0.8
+    opacity: 0
 })
 
 tl.from('.page1',{
-    y:1200,
+    y:"100%",
     opacity: 0,
-    delay: -0.85,
-    ease:Power4
+    duration:.3,
 })
 
-tl.from('.page1 .navbar svg,.page1 .navbar .nav-right li',{
+.to(".loader",{
+    display:"none",
+})
+
+tl.from('.page1 .navbar svg,.nav-right li',{
     y:-10,
     stagger:.2,
-    duration:.3,
+    duration:.6,
     opacity:0,
 })
 
 tl.from('.hero',{
     y: 50,
-    stagger: 0.15,
-    duration: 0.5,
     opacity:0,
-    ease:Power4
+    stagger:.15,
+    duration: 0.5,
 })
 }
 function cursor() {
