@@ -49,8 +49,8 @@ tl.from('.page1',{
 
 tl.from('.page1 .navbar svg,.nav-right li',{
     y:-10,
-    stagger:.2,
-    duration:.6,
+    stagger:.15,
+    duration:.4,
     opacity:0,
 })
 
@@ -58,13 +58,11 @@ tl.from('.hero',{
     y: 50,
     opacity:0,
     stagger:.15,
-    duration: 0.5,
+    duration: 0.4,
 })
 }
 function cursor() {
     document.addEventListener("mousemove",(e) => {
-        console.log(e);
-        
         gsap.to(".cursor",{
             left:e.clientX,
             top:e.clientY,
