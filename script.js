@@ -70,5 +70,5 @@ function cursor() {
     Shery.makeMagnet(".nav-right li");
 }
 
-// loadingAnimation();
+loadingAnimation();
 cursor();
