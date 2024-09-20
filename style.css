@@ -146,7 +146,7 @@ body{
 
 .nav-right li {
     font-weight: 580;
-    font-size: 2vw;
+    font-size: 1rem;
     z-index: 2;
 }
 
@@ -161,11 +161,10 @@ body{
     justify-content: flex-start;
     align-items: center;
     width: 70vw;
-    margin-left: 30%;
+    margin-left: 30vw;
 }
 
 .hero h1{
-    overflow: hidden;
     font-weight: 600;
     font-size: 6vw;
     text-transform: uppercase;
@@ -174,7 +173,7 @@ body{
 }
 
 #hero1{
-    margin-top: 7vw;
+    margin-top: 20vh;
 }
 
 #hero3 h1{
@@ -258,7 +257,7 @@ body{
     min-height: 100vh;
     background-color: #151515;
     position: relative;
-    padding-top: 3vh;
+    padding: 5vh 0;
 }
 
 .page4-content{
@@ -306,8 +305,8 @@ body{
     background-color: #3F7DF4;
     padding: 4vw 3vw;
     position: relative;
-    margin-top: -30%;
-    margin-left: 22%;
+    margin-top: -30vh;
+    margin-left: 22vw;
 }
 
 .blue-div-elem{
@@ -326,4 +325,69 @@ body{
 .blue-div-elem p{
     width: 40%;
     font-size: 1vw;
+}
+
+.page5{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #151515;
+    position: relative;
+}
+
+.elem{
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: 1vh;
+}
+
+.elem h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px white;
+    font-weight: 300;
+    color: transparent;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 20px;
+    animation-name: textAnimation;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.elem2{
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: 1vh;
+}
+
+.elem2 h1{
+    font-size: 7vw;
+    -webkit-text-stroke: 1px white;
+    font-weight: 300;
+    color: transparent;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 20px;
+    transform: translateX(calc(-100%-20px));
+    animation-name: textAnimation;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+.elem span,.elem2 span{
+    font-family: "silk serif";
+    -webkit-text-stroke: 1px white;
+    font-weight: 300;
+    color: transparent;
+}
+
+@keyframes textAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(calc(-100% - 20px));
+    }
 }
