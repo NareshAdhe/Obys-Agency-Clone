@@ -12,11 +12,15 @@ body {
     width: 100%;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 .main {
     min-height: 100vh;
     width: 100%;
     position: relative;
-    background-color: #000;
+    background-color: #030303;
     overflow: hidden;
 }
 
@@ -39,7 +43,7 @@ body {
     width: 100vw;
     position: fixed;
     z-index: 1000;
-    background-color: #030303;
+    background-color: #0B0B0B;
     padding: 25vh 10vw;
 }
 
@@ -84,23 +88,19 @@ body {
     font-family: 'silk serif';
     opacity: 0;
     animation-duration: 1.5s;
-    font-weight: 200;
+    font-weight: 900;
     animation-iteration-count: infinite;
 }
 
 @keyframes anime {
     0% {
         font-family: 'plain light';
-        -webkit-text-stroke: 1px white;
-        font-weight: 600;
         color: white;
         opacity: 1;
     }
 
-    47% {
+    48% {
         font-family: 'plain light';
-        -webkit-text-stroke: 1px white;
-        font-weight: 600;
         color: white;
         opacity: 0;
     }
@@ -108,7 +108,6 @@ body {
     50% {
         font-family: 'silk serif';
         -webkit-text-stroke: 1px solid white;
-        font-weight: 300;
         color: transparent;
         opacity: 1;
     }
@@ -116,8 +115,8 @@ body {
     100% {
         font-family: 'silk serif';
         -webkit-text-stroke: 1px white;
-        font-weight: 300;
         color: transparent;
+        font-weight: 100;
         opacity: 0;
     }
 }
@@ -161,7 +160,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 70%;
+    width: 70vw;
     margin-left: 30%;
 }
 
@@ -209,25 +208,122 @@ body {
 .video-container{
     position: relative;
     height: 65vh;
-    width: 70%;
-    margin-left: 30%;
-    background-color: grey;
+    width: 70vw;
+    left: 30%;
+    background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
+}
+
+.video-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+}
+
+.video-container video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .page2-cursor{
     position: absolute;
     left: 80%;
-    top: 0%;
+    top: 1%;
     height: 8vw;
     width: 8vw;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translate(-50%,-50%);
-    border-radius: 50%;
+    z-index: 900;
     background-color: orange;
 }
 
 .page2-cursor i{
     font-size: 2.5vw;
+}
+
+.page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(61, 61, 61);
+    position: relative;
+}
+
+.page4{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #151515;
+    position: relative;
+    padding-top: 3vh;
+}
+
+.page4-content{
+    position: relative;
+    width: 72vw;
+    margin-left: 28%;
+}
+
+.page4-content h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+}
+
+.page4-content .underline{
+    height: 1px;
+    width: 90%;
+    background-color: #d6d6d6;
+    margin: 6vh 0;
+}
+
+.page4-content>p{
+    font-size: 2.3vw;
+    width: 50%;
+    margin-bottom: 4vw;
+}
+
+.page4-flex{
+    display: flex;
+    gap: 2vw;
+}
+
+.page4-flex img{
+    width: 45%;
+    object-fit: cover;
+}
+
+.page4-flex p{
+    font-size: 1vw;
+    width: 25%;
+    line-height: 1.5vw;
+}
+
+.page4-blue{
+    width: 32vw;
+    background-color: #3F7DF4;
+    padding: 4vw 3vw;
+    position: relative;
+    margin-top: -30vh;
+    margin-left: 22vw;
+}
+
+.blue-div-elem{
+    padding: 2vw 0vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.blue-div-elem h4{
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+.blue-div-elem p{
+    width: 40%;
+    font-size: 1vw;
 }

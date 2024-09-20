@@ -48,28 +48,27 @@ tl.from('.page1',{
 })
 
 tl.from('.page1 .navbar svg,.nav-right li',{
-    y:-10,
-    stagger:.15,
-    duration:.4,
     opacity:0,
+    stagger:.15,
+    duration: 0.4,
 })
 
 tl.from('.hero',{
     y: 50,
     opacity:0,
-    stagger:.15,
+    stagger:.1,
     duration: 0.4,
 })
 }
 function cursor() {
     document.addEventListener("mousemove",(e) => {
         gsap.to(".cursor",{
-            left:e.clientX,
-            top:e.clientY,
+            left:e.x,
+            top:e.y,
         })
     })
-    Shery.makeMagnet(".nav-right li,.navbar svg");
+    Shery.makeMagnet(".nav-right li");
 }
 
-loadingAnimation();
+// loadingAnimation();
 cursor();
