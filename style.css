@@ -146,7 +146,7 @@ body{
 
 .nav-right li {
     font-weight: 580;
-    font-size: 1vw;
+    font-size: 2vw;
     z-index: 2;
 }
 
@@ -282,7 +282,7 @@ body{
 .page4-content>p{
     font-size: 2.3vw;
     width: 50%;
-    margin-bottom: 4vw;
+    margin-bottom: 4%;
 }
 
 .page4-flex{
@@ -306,8 +306,8 @@ body{
     background-color: #3F7DF4;
     padding: 4vw 3vw;
     position: relative;
-    margin-top: -30vh;
-    margin-left: 22vw;
+    margin-top: -30%;
+    margin-left: 22%;
 }
 
 .blue-div-elem{

@@ -53,7 +53,7 @@ tl.from('.page1 .navbar svg,.nav-right li',{
     duration: 0.4,
 })
 
-tl.from('.hero',{
+tl.from('.hero h1',{
     y: 50,
     opacity:0,
     stagger:.1,
