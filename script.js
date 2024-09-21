@@ -2,8 +2,8 @@ function loadingAnimation() {
 var tl = gsap.timeline();
 tl.from('.line h1', {
     y: 150,
-    stagger: 0.25,
-    duration: 0.6,
+    stagger: 0.15,
+    duration: 0.4,
     delay: 0.4
 })
 
@@ -40,24 +40,31 @@ tl.to(".loader", {
 tl.from('.page1',{
     y:"100%",
     opacity: 0,
-    duration:.3,
+    duration:.4,
+})
+
+tl.to('html,body',{
+    overflow: 'visible',
+    delay:-0.3
 })
 
 .to(".loader",{
+    zIndex:0,
     display:"none",
 })
 
-tl.from('.page1 .navbar svg,.nav-right li',{
+tl.from('#hero1,#hero2,#hero3,#hero4',{
     opacity:0,
-    stagger:.15,
+    y: 50,
+    delay:-0.8,
+    stagger:.1,
     duration: 0.4,
 })
 
-tl.from('.hero h1',{
-    y: 50,
-    opacity:0,
-    stagger:.1,
-    duration: 0.4,
+tl.to('.navbar',{
+    opacity:1,
+    delay:-0.5,
+    y:0
 })
 }
 function cursor() {
