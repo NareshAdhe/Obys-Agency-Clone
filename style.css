@@ -306,22 +306,110 @@ body::-webkit-scrollbar {
     margin-left: 28vw;
 }
 
+.page3-circle1{
+    height: 25vw;
+    width: 25vw;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    margin-top: 35vh;
+    margin-left: 5vw;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.page3-circle1 svg{
+    height: 40%;
+}
+
+.page3-circle2{
+    position: relative;
+    height: 25vw;
+    width: 25vw;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page3-circle2 svg{
+    height: 40%;
+    rotate: -45deg;
+}
+
+.circle1-in,.circle2-in{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0;
+    transition: all 0.5s ease;
+}
+
+.circle1-in p,.circle2-in p{
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: black;
+    width: 80%;
+    scale: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay: 0.5s;
+}
+
+.circle2-in p{
+    text-align: center;
+}
+
+.page3-circle1:hover .circle1-in{
+    scale: 1;
+}
+
+.page3-circle1:hover .circle1-in p{
+    opacity: 1;
+    scale: 1;
+}
+
+.page3-circle2:hover .circle2-in{
+    scale: 1;
+}
+
+.page3-circle2:hover .circle2-in p{
+    opacity: 1;
+    scale: 1;
+}
+
 .image-div-container{
     padding: 1vw;
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    /* background-color: red; */
 }
 
 .image-div{
-    height: 60vh;
-    width: 20vw;
+    height: 38vw;
+    width: 25vw;
     position: relative;
     overflow: hidden;
+    margin: 2vw;
     flex-shrink: 0;
+}
+
+.image-div:nth-child(1){
+    height: 28vw;
+    width: 21vw;
 }
 
 .image-div img{
