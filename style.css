@@ -28,7 +28,7 @@ body::-webkit-scrollbar {
     min-height: 100vh;
     width: 100%;
     position: relative;
-    background-color: #030303;
+    background-color: #151515;
     overflow: hidden;
 }
 
@@ -48,7 +48,6 @@ body::-webkit-scrollbar {
 }
 
 .loader {
-    cursor: default;
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -135,8 +134,8 @@ body::-webkit-scrollbar {
     height: 100vh;
     width: 100%;
     background-color: #151515;
-    cursor: default;
     overflow: hidden;
+    cursor: default;
 }
 
 .navbar {
@@ -230,6 +229,7 @@ body::-webkit-scrollbar {
     background-color: #151515;
     position: relative;
     padding-top: 17.5vh;
+    cursor: default;
 }
 
 .video-container {
@@ -277,9 +277,60 @@ body::-webkit-scrollbar {
 .page3 {
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(61, 61, 61);
     position: relative;
+    padding: 5vh 2vw;
 }
+
+.page3 h1 {
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 28vw;
+}
+
+.page3 h1::before{
+    content: "02";
+    position: absolute;
+    font-family: "silk serif";
+    font-weight: 400;
+    font-size: 3vw;
+    left: -10vw;
+    top: 1vh;
+}
+
+.page3 .underline{
+    height: 1px;
+    width: 90%;
+    background-color: #d6d6d6;
+    margin: 6vh 0;
+    margin-left: 28vw;
+}
+
+.image-div-container{
+    padding: 1vw;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.image-div{
+    height: 60vh;
+    width: 20vw;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 .page4 {
     width: 100%;
@@ -287,6 +338,7 @@ body::-webkit-scrollbar {
     background-color: #151515;
     position: relative;
     padding: 5vh 0;
+    margin-bottom: 15vh;
 }
 
 .page4-content {
@@ -506,4 +558,9 @@ body::-webkit-scrollbar {
     font-size: 1vw;
     font-weight: 500;
     margin-top: 5vh;
+}
+
+._canvas_container{
+    z-index: 999999 !important;
+    pointer-events: none;
 }
