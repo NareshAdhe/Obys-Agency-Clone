@@ -43,8 +43,8 @@ body::-webkit-scrollbar {
     background: transparent;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
-    pointer-events: none;
     z-index: 1000;
+    pointer-events: none;
 }
 
 .loader {
@@ -228,8 +228,9 @@ body::-webkit-scrollbar {
     height: 100vh;
     background-color: #151515;
     position: relative;
-    padding-top: 17.5vh;
+    padding-top: 10vh;
     cursor: default;
+    margin-bottom: 10vh;
 }
 
 .video-container {
@@ -279,6 +280,7 @@ body::-webkit-scrollbar {
     width: 100%;
     position: relative;
     padding: 5vh 2vw;
+    margin-bottom: 20vh;
 }
 
 .page3 h1 {
@@ -356,9 +358,9 @@ body::-webkit-scrollbar {
 
 .circle1-in p,.circle2-in p{
     font-size: 1.2vw;
-    font-weight: 600;
+    font-weight: 500;
     color: black;
-    width: 80%;
+    width: 90%;
     scale: 0;
     opacity: 0;
     transition: all 0.3s ease;
@@ -395,7 +397,6 @@ body::-webkit-scrollbar {
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
-    /* background-color: red; */
 }
 
 .image-div{
@@ -575,11 +576,11 @@ body::-webkit-scrollbar {
 }
 
 .footer {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: #151515;
+    padding: 10vh 0;
     padding-left: 28vw;
-    padding-top: 5vh;
     position: relative;
 }
 
@@ -622,18 +623,35 @@ body::-webkit-scrollbar {
     margin-bottom: 7vh;
 }
 
+.box h5 {
+    text-transform: capitalize;
+    font-size: 1.8vw;
+    font-weight: 200;
+    color: #F9F9F9;
+}
+
+.box .elem{
+    height: 3.8vh;
+    overflow: hidden;
+}
+
+.elem #firstName{
+    margin-bottom: 2vh;
+}
+
+.box .elem h5{
+    transition: all ease 0.8s;
+}
+
+.box .elem:hover #firstName{
+    margin-top: -5.85vh;
+}
+
 .box h6 {
     font-size: 1vw;
     font-weight: 500;
     margin-bottom: 2.5vh;
     text-transform: capitalize;
-    color: #F9F9F9;
-}
-
-.box h5 {
-    text-transform: capitalize;
-    font-size: 1.8vw;
-    font-weight: 200;
     color: #F9F9F9;
 }
 
@@ -645,7 +663,7 @@ body::-webkit-scrollbar {
 .footer h4 {
     font-size: 1vw;
     font-weight: 500;
-    margin-top: 5vh;
+    margin: 5vh 0;
 }
 
 ._canvas_container{

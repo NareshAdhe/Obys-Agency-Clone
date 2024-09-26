@@ -71,11 +71,7 @@ tl.to(".loader", {
 
 tl.from('.page1',{
     opacity: 0,
-},"-=.4")
-
-tl.to('html,body',{
-    overflow: 'visible',
-},"-=0.4")
+},"-=.5")
 
 .to(".loader",{
     zIndex:0,
@@ -84,9 +80,9 @@ tl.to('html,body',{
 
 tl.from('.navbar svg,.navbar li',{
     opacity:0,
-    y:-30,
-    stagger:0.15,
-},"-=0.3")
+    y:-10,
+    stagger:0.1,
+},"-=0.4")
 
 tl.from('#hero2 h1,#hero3 h1,#hero4 h1',{
     y: 150,
@@ -95,8 +91,11 @@ tl.from('#hero2 h1,#hero3 h1,#hero4 h1',{
 
 tl.from('#hero1 h1',{
     opacity: 0,
-    y:30
+    y:30,
 },"-=.9")
+tl.from('.page2',{
+    opacity: 0,
+})
 }
 function cursor() {
     document.addEventListener("mousemove",(e) => {
