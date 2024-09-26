@@ -274,19 +274,12 @@ body::-webkit-scrollbar {
     top: 1vh;
 }
 
-.page3 .underline,.brand-div .underline{
+.page3 .underline{
     height: 1px;
     width: 90%;
     background-color: #d6d6d6;
     margin: 6vh 0;
     margin-left: 28vw;
-}
-
-.brand-div .underline{
-    height: 1px;
-    width: 90%;
-    background-color: #d6d6d6;
-    margin: 6vh 2vwx;
 }
 
 .page3-circle1 {
@@ -376,13 +369,11 @@ body::-webkit-scrollbar {
     margin: 2vw;    
 }
 
-.brand-bottom{
-    margin: 0 auto;
-    width: 90vw;
-    background-color: red;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+.brand-div .underline{
+    height: 1px;
+    width: 25vw;
+    background-color: #d6d6d6;
+    margin: 6vh 2vw;
 }
 
 .image-div-container {
