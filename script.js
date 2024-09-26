@@ -182,7 +182,7 @@ function hoverAnimation() {
     })
 }
 
-// loadingAnimation();
+loadingAnimation();
 cursor();
 locomotiveAnimation();
 sheryAnimation();
