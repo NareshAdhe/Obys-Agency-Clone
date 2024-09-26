@@ -8,10 +8,16 @@
 
 html,
 body {
-    overflow: hidden;
     height: 100%;
     width: 100%;
     cursor: default;
+}
+
+.mousefollower {
+    border: 2px solid white;
+    background-color: #fff;
+    scale: 2;
+    mix-blend-mode: difference;
 }
 
 html {
@@ -30,21 +36,6 @@ body::-webkit-scrollbar {
     position: relative;
     background-color: #151515;
     overflow: hidden;
-}
-
-.cursor {
-    position: fixed;
-    left: 0%;
-    top: 50%;
-    height: 3vw;
-    width: 3vw;
-    border-radius: 50%;
-    border: 1px solid rgb(199, 199, 199);
-    background: transparent;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    pointer-events: none;
 }
 
 .loader {
@@ -138,6 +129,16 @@ body::-webkit-scrollbar {
     cursor: default;
 }
 
+#hero1 h1::before {
+    content: "01";
+    position: absolute;
+    font-family: "silk serif";
+    font-weight: 400;
+    font-size: 3vw;
+    left: 20vw;
+    top: 30vh;
+}
+
 .navbar {
     padding: 2.5vw 5.5vw;
     display: flex;
@@ -145,7 +146,7 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
-.navbar svg{
+.navbar svg {
     height: 5vw;
     width: 5vw;
 }
@@ -183,36 +184,16 @@ body::-webkit-scrollbar {
     z-index: 2000;
 }
 
-#hero1{
-    overflow: visible;
-}
-
-#hero1 h1{
+#hero1 h1 {
     margin-top: 10vh;
 }
 
-#hero1 h1::before{
-    content: "01";
-    position: absolute;
-    font-family: "silk serif";
-    font-weight: 400;
-    font-size: 3vw;
-    left: -10vw;
-    top: 1vh;
+#hero3 {
+    position: relative;
 }
 
 #hero3 h1 {
     border-bottom: .5vw solid white;
-}
-
-#hero3 #slash {
-    border-bottom: none;
-    margin-bottom: 1vw;
-}
-
-#hero3:nth-child(1),
-#hero3:nth-child(3) {
-    margin-right: .7vw;
 }
 
 #hero3 #name:hover {
@@ -230,7 +211,7 @@ body::-webkit-scrollbar {
     position: relative;
     padding-top: 10vh;
     cursor: default;
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
 }
 
 .video-container {
@@ -239,39 +220,32 @@ body::-webkit-scrollbar {
     width: 70vw;
     left: 30%;
     background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
-}
-
-.video-container img {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
 }
 
 .video-container video {
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
-    z-index: 2;
+    opacity: 0;
 }
 
-.page2-cursor {
+.video-cursor {
     position: absolute;
-    left: 80%;
-    top: 1%;
-    height: 8vw;
-    width: 8vw;
+    left: 70%;
+    top: -15%;
+    height: 9vw;
+    width: 9vw;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translate(-50%, -50%);
-    z-index: 900;
-    background-color: orange;
-    z-index: 2000;
+    background-color: #ffA63d;
+    z-index: 999;
 }
 
-.page2-cursor i {
+.video-cursor i {
     font-size: 2.5vw;
 }
 
@@ -290,7 +264,7 @@ body::-webkit-scrollbar {
     margin-left: 28vw;
 }
 
-.page3 h1::before{
+.page3 h1::before {
     content: "02";
     position: absolute;
     font-family: "silk serif";
@@ -300,7 +274,7 @@ body::-webkit-scrollbar {
     top: 1vh;
 }
 
-.page3 .underline{
+.page3 .underline,.brand-div .underline{
     height: 1px;
     width: 90%;
     background-color: #d6d6d6;
@@ -308,7 +282,14 @@ body::-webkit-scrollbar {
     margin-left: 28vw;
 }
 
-.page3-circle1{
+.brand-div .underline{
+    height: 1px;
+    width: 90%;
+    background-color: #d6d6d6;
+    margin: 6vh 2vwx;
+}
+
+.page3-circle1 {
     height: 25vw;
     width: 25vw;
     border-radius: 50%;
@@ -321,11 +302,11 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-.page3-circle1 svg{
+.page3-circle1 svg {
     height: 40%;
 }
 
-.page3-circle2{
+.page3-circle2 {
     position: relative;
     height: 25vw;
     width: 25vw;
@@ -336,12 +317,13 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
-.page3-circle2 svg{
+.page3-circle2 svg {
     height: 40%;
     rotate: -45deg;
 }
 
-.circle1-in,.circle2-in{
+.circle1-in,
+.circle2-in {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -356,7 +338,8 @@ body::-webkit-scrollbar {
     transition: all 0.5s ease;
 }
 
-.circle1-in p,.circle2-in p{
+.circle1-in p,
+.circle2-in p {
     font-size: 1.2vw;
     font-weight: 500;
     color: black;
@@ -367,29 +350,42 @@ body::-webkit-scrollbar {
     transition-delay: 0.5s;
 }
 
-.circle2-in p{
+.circle2-in p {
     text-align: center;
 }
 
-.page3-circle1:hover .circle1-in{
+.page3-circle1:hover .circle1-in {
     scale: 1;
 }
 
-.page3-circle1:hover .circle1-in p{
+.page3-circle1:hover .circle1-in p {
     opacity: 1;
     scale: 1;
 }
 
-.page3-circle2:hover .circle2-in{
+.page3-circle2:hover .circle2-in {
     scale: 1;
 }
 
-.page3-circle2:hover .circle2-in p{
+.page3-circle2:hover .circle2-in p {
     opacity: 1;
     scale: 1;
 }
 
-.image-div-container{
+.brand-div h2,.brand-div p{
+    margin: 2vw;    
+}
+
+.brand-bottom{
+    margin: 0 auto;
+    width: 90vw;
+    background-color: red;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.image-div-container {
     padding: 1vw;
     position: relative;
     overflow: hidden;
@@ -399,7 +395,7 @@ body::-webkit-scrollbar {
     flex-wrap: wrap;
 }
 
-.image-div{
+.image-div {
     height: 38vw;
     width: 25vw;
     position: relative;
@@ -408,12 +404,12 @@ body::-webkit-scrollbar {
     flex-shrink: 0;
 }
 
-.image-div:nth-child(1){
+.image-div:nth-child(1) {
     height: 28vw;
     width: 21vw;
 }
 
-.image-div img{
+.image-div img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -427,7 +423,7 @@ body::-webkit-scrollbar {
     background-color: #151515;
     position: relative;
     padding: 5vh 0;
-    margin-bottom: 15vh;
+    margin-bottom: 20vh;
 }
 
 .page4-content {
@@ -442,7 +438,7 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-.page4-content h1::before{
+.page4-content h1::before {
     content: "03";
     position: absolute;
     font-family: "silk serif";
@@ -591,7 +587,7 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-.footer h1::before{
+.footer h1::before {
     content: "04";
     position: absolute;
     font-family: "silk serif";
@@ -630,20 +626,20 @@ body::-webkit-scrollbar {
     color: #F9F9F9;
 }
 
-.box .elem{
+.box .elem {
     height: 3.8vh;
     overflow: hidden;
 }
 
-.elem #firstName{
+.elem #firstName {
     margin-bottom: 2vh;
 }
 
-.box .elem h5{
+.box .elem h5 {
     transition: all ease 0.8s;
 }
 
-.box .elem:hover #firstName{
+.box .elem:hover #firstName {
     margin-top: -5.85vh;
 }
 
@@ -666,7 +662,585 @@ body::-webkit-scrollbar {
     margin: 5vh 0;
 }
 
-._canvas_container{
+._canvas_container {
     z-index: 999999 !important;
     pointer-events: none;
+}
+
+#flag {
+    position: absolute;
+    height: 20vw;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+@media (max-width:600px) {
+    .page1 {
+        position: relative;
+        height: 60vh;
+        width: 100%;
+        background-color: #151515;
+        overflow: hidden;
+        cursor: default;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding: 1.5vw 5.5vw;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+    }
+
+    .navbar svg {
+        height: 16vw;
+        width: 16vw;
+    }
+
+    .nav-right {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5vw;
+        display: none;
+    }
+
+    .nav-right li {
+        font-weight: 580;
+        font-size: 1vw;
+        z-index: 2000;
+    }
+
+    .hero {
+        overflow: hidden;
+        overflow-x: visible;
+        height: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 72%;
+        margin-left: 5.5vw;
+    }
+
+    .hero h1 {
+        font-weight: 600;
+        font-size: 9.2vw;
+        text-transform: uppercase;
+        letter-spacing: 0.1vh;
+        line-height: 9.2vw;
+        z-index: 2000;
+    }
+
+    #hero1 {
+        overflow: visible;
+    }
+
+    #hero1 h1 {
+        margin-top: 26vh;
+    }
+
+    #hero1 h1::before {
+        content: "01";
+        position: absolute;
+        font-family: "silk serif";
+        font-weight: 400;
+        font-size: 2.8vh;
+        left: 5.5vw;
+        top: 20vh;
+    }
+
+    #hero3 {
+        position: relative;
+    }
+
+    #hero3 h1 {
+        border-bottom: 1vw solid white;
+    }
+
+    #hero3 #name:hover {
+        padding-bottom: .5vw;
+        border-bottom: none;
+        -webkit-text-stroke: 1px white;
+        font-weight: 400;
+        color: transparent;
+    }
+
+    .page2 {
+        width: 100%;
+        height: 52vh;
+        padding: 6.5vh 0;
+    }
+
+    .video-container {
+        position: relative;
+        height: 50vh;
+        width: 100vw;
+        left: 0;
+        background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .video-container video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0;
+    }
+
+    .video-cursor {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 25vw;
+        width: 25vw;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffA63d;
+        z-index: 999;
+    }
+
+    .video-cursor i {
+        font-size: 6vw;
+    }
+
+    .page3 {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        padding: 0vh 2vw;
+    }
+
+    .page3 h1 {
+        font-size: 9.5vw;
+        text-transform: uppercase;
+        position: relative;
+        margin-left: 1.8vw;
+    }
+
+    .page3 h1::before {
+        content: "02";
+        position: absolute;
+        font-family: "silk serif";
+        font-weight: 400;
+        font-size: 6vw;
+        left: 1.2vw;
+        top: -5vh;
+    }
+
+    .page3 .underline{
+        height: 1px;
+        width: 95%;
+        background-color: #d6d6d6;
+        margin: 4vh 0;
+        margin-left: 1.8vw;
+    }
+
+    .page3-circle1 {
+        height: 25vw;
+        width: 25vw;
+        border-radius: 50%;
+        border: 2px solid white;
+        display: flex;
+        margin-top: 35vh;
+        margin-left: 5vw;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        display: none;
+    }
+
+    .page3-circle1 svg {
+        height: 40%;
+    }
+
+    .page3-circle2 {
+        position: relative;
+        height: 25vw;
+        width: 25vw;
+        border-radius: 50%;
+        border: 2px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .page3-circle2 svg {
+        height: 40%;
+        rotate: -45deg;
+    }
+
+    .circle1-in,
+    .circle2-in {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        background-color: white;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scale: 0;
+        transition: all 0.5s ease;
+    }
+
+    .circle1-in p,
+    .circle2-in p {
+        font-size: 1.2vw;
+        font-weight: 500;
+        color: black;
+        width: 90%;
+        scale: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+        transition-delay: 0.5s;
+    }
+
+    .circle2-in p {
+        text-align: center;
+    }
+
+    .page3-circle1:hover .circle1-in {
+        scale: 1;
+    }
+
+    .page3-circle1:hover .circle1-in p {
+        opacity: 1;
+        scale: 1;
+    }
+
+    .page3-circle2:hover .circle2-in {
+        scale: 1;
+    }
+
+    .page3-circle2:hover .circle2-in p {
+        opacity: 1;
+        scale: 1;
+    }
+
+    .brand-div h2,.brand-div p{
+        margin: 5vw 1vw;    
+    }
+
+    .brand-bottom{
+        margin: 0 auto;
+        width: 90vw;
+        background-color: red;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .image-div-container {
+        padding: 1vw;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+
+    .image-div {
+        height: 115vw;
+        width: 90vw;
+        position: relative;
+        overflow: hidden;
+        margin: 2vw 0;
+        margin-left: 1.8vw;
+        flex-shrink: 0;
+    }
+
+    .image-div:nth-child(1) {
+        height: 115vw;
+        width: 90vw;
+    }
+
+    .image-div img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .page4 {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        padding: 0vh 2vw;
+    }
+
+    .page4-content {
+        position: relative;
+        width: 72vw;
+        margin-left: 1.8vw;
+    }
+
+    .page4-content h1 {
+        font-size: 9.5vw;
+        text-transform: uppercase;
+        position: relative;
+        margin-left: 1.8vw;
+    }
+
+    .page4-content h1::before {
+        content: "03";
+        position: absolute;
+        font-family: "silk serif";
+        font-weight: 400;
+        font-size: 5vw;
+        left: 0;
+        top: -5vh;
+    }
+
+    .page4-content .underline {
+        height: 2px;
+        width: 90vw;
+        background-color: #d6d6d6;
+        margin: 4vh 0;
+        margin-left: 1.8vw;
+    }
+
+    .page4-content>p {
+        line-height: 1.15;
+        font-size: 6vw;
+        width: 85vw;
+        margin: 12vw 0;
+        margin-left: 1.8vw;
+    }
+
+    .page4-flex {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2vw;
+        margin-left: 1.8vw;
+    }
+
+    .page4-flex img {
+        width: 90vw;
+        margin: 7vw 0;
+        object-fit: cover;
+    }
+
+    .page4-flex p {
+        font-size: 3.9vw;
+        width: 80vw;
+        line-height: 1.5;
+    }
+
+    .page4-blue {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 90vw;
+        height: 70vh;
+        background-color: #3F7DF4;
+        position: relative;
+        margin-left: 1.8vw;
+        margin-top: -7vw;
+    }
+
+    .blue-div-elem {
+        padding: 7vw 0vw;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(221, 221, 221);
+    }
+
+    .blue-div-elem h4 {
+        font-size: 4vw;
+        font-weight: 500;
+    }
+
+    .blue-div-elem p {
+        width: 50%;
+        font-size: 4vw;
+    }
+
+    .page5 {
+        width: 100%;
+        min-height: 20vh;
+        background-color: #151515;
+        position: relative;
+    }
+
+    .elem {
+        white-space: nowrap;
+        overflow-x: hidden;
+        margin-bottom: 1vh;
+    }
+
+    .elem h1 {
+        font-size: 7vw;
+        -webkit-text-stroke: 1px white;
+        font-weight: 300;
+        color: transparent;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-right: 20px;
+        animation-name: textAnimation;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    .elem2 {
+        white-space: nowrap;
+        overflow-x: hidden;
+        margin-bottom: 1vh;
+    }
+
+    .elem2 h1 {
+        font-size: 7vw;
+        -webkit-text-stroke: 1px white;
+        font-weight: 300;
+        color: transparent;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-right: 20px;
+        transform: translateX(calc(-100%-20px));
+        animation-name: textAnimation;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+    }
+
+    .elem span,
+    .elem2 span {
+        font-family: "silk serif";
+        -webkit-text-stroke: 1px white;
+        font-weight: 300;
+        color: transparent;
+    }
+
+    @keyframes textAnimation {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(calc(-100% - 20px));
+        }
+    }
+
+    .footer {
+        min-height: 100vh;
+        width: 100%;
+        background-color: #151515;
+        padding: 10vh 0;
+        padding-left: 28vw;
+        position: relative;
+    }
+
+    .footer h1 {
+        font-size: 7vw;
+        letter-spacing: .3vw;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .footer h1::before {
+        content: "04";
+        position: absolute;
+        font-family: "silk serif";
+        font-weight: 400;
+        font-size: 3vw;
+        left: -10vw;
+        top: 1vh;
+    }
+
+    .footer-div {
+        padding-right: 7vw;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .footer .underline {
+        height: 1px;
+        width: 67vw;
+        background-color: #fff;
+        margin-top: 9.2vh;
+    }
+
+    .box {
+        margin-top: 12vh;
+        width: 30%;
+        text-transform: capitalize;
+        line-height: 3.5vh;
+        margin-bottom: 7vh;
+    }
+
+    .box h5 {
+        text-transform: capitalize;
+        font-size: 1.8vw;
+        font-weight: 200;
+        color: #F9F9F9;
+    }
+
+    .box .elem {
+        height: 3.8vh;
+        overflow: hidden;
+    }
+
+    .elem #firstName {
+        margin-bottom: 2vh;
+    }
+
+    .box .elem h5 {
+        transition: all ease 0.8s;
+    }
+
+    .box .elem:hover #firstName {
+        margin-top: -5.85vh;
+    }
+
+    .box h6 {
+        font-size: 1vw;
+        font-weight: 500;
+        margin-bottom: 2.5vh;
+        text-transform: capitalize;
+        color: #F9F9F9;
+    }
+
+    .box .mail {
+        text-decoration: underline;
+        text-transform: lowercase;
+    }
+
+    .footer h4 {
+        font-size: 1vw;
+        font-weight: 500;
+        margin: 5vh 0;
+    }
+
+    ._canvas_container {
+        z-index: 999999 !important;
+        pointer-events: none;
+    }
+
+    #flag {
+        position: absolute;
+        height: 20vw;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
 }
