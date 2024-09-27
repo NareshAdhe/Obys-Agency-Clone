@@ -64,18 +64,23 @@ function loadingAnimation() {
         delay: 2.8
     })
 
+    tl.to('html,body', {
+        overflowY: "visible"
+    })
+
     tl.to(".loader", {
         opacity: 0
     })
 
     tl.from('.page1', {
         opacity: 0,
-    }, "-=.5")
+        y:"100%"
+    }, "-=.7")
 
-        .to(".loader", {
-            zIndex: 0,
-            display: "none",
-        })
+    tl.to(".loader", {
+        zIndex: 0,
+        display: "none",
+    })
 
     tl.from('.navbar svg,.navbar li', {
         opacity: 0,
@@ -84,14 +89,14 @@ function loadingAnimation() {
     }, "-=0.4")
 
     tl.from('#hero2 h1,#hero3 h1,#hero4 h1', {
-        y: 150,
-        stagger: 0.05,
+        y: 100,
+        stagger: 0.1,
     })
 
     tl.from('#hero1 h1', {
-        opacity: 0,
-        y: 30,
-    }, "-=.9")
+        opacity:0,
+        y:30
+    }, "-=.8")
     tl.from('.page2', {
         opacity: 0,
     })
@@ -155,12 +160,6 @@ function sheryAnimation() {
         config: { "a": { "value": 2, "range": [0, 30] }, "b": { "value": -0.82, "range": [-1, 1] }, "zindex": { "value": "9996999", "range": [-9999999, 9999999] }, "aspect": { "value": 0.7499854889390236 }, "ignoreShapeAspect": { "value": true }, "shapePosition": { "value": { "x": 0, "y": 0 } }, "shapeScale": { "value": { "x": 0.5, "y": 0.5 } }, "shapeEdgeSoftness": { "value": 0, "range": [0, 0.5] }, "shapeRadius": { "value": 0, "range": [0, 2] }, "currentScroll": { "value": 0 }, "scrollLerp": { "value": 0.07 }, "gooey": { "value": true }, "infiniteGooey": { "value": true }, "growSize": { "value": 4, "range": [1, 15] }, "durationOut": { "value": 1, "range": [0.1, 5] }, "durationIn": { "value": 1.5, "range": [0.1, 5] }, "displaceAmount": { "value": 0.5 }, "masker": { "value": true }, "maskVal": { "value": 1.3, "range": [1, 5] }, "scrollType": { "value": 0 }, "geoVertex": { "range": [1, 64], "value": 1 }, "noEffectGooey": { "value": true }, "onMouse": { "value": 1 }, "noise_speed": { "value": 1.07, "range": [0, 10] }, "metaball": { "value": 0.5, "range": [0, 2], "_gsap": { "id": 27 } }, "discard_threshold": { "value": 0.5, "range": [0, 1] }, "antialias_threshold": { "value": 0, "range": [0, 0.1] }, "noise_height": { "value": 0.4, "range": [0, 2] }, "noise_scale": { "value": 7.63, "range": [0, 100] } }
     })
 }
-function textAnimation() {
-    let text = document.querySelector(".footer h1");
-    text.addEventListener("mouseenter", () => {
-        $('.footer h1').textillate({ in: { effect: 'fadeIn' } });
-    })
-}
 function hoverAnimation() {
     document.addEventListener("mousemove", (e) => {
         gsap.to("#flag", {
@@ -168,13 +167,13 @@ function hoverAnimation() {
             top: e.y,
         })
     })
-    
+
     document.querySelector("#hero3").addEventListener("mouseenter", (e) => {
         gsap.to("#flag", {
             opacity: 1
         })
     })
-    
+
     document.querySelector("#hero3").addEventListener("mouseleave", (e) => {
         gsap.to("#flag", {
             opacity: 0
@@ -186,5 +185,4 @@ loadingAnimation();
 cursor();
 locomotiveAnimation();
 sheryAnimation();
-textAnimation();
 hoverAnimation();
