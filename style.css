@@ -188,7 +188,7 @@ body::-webkit-scrollbar {
 
 .hero {
     overflow: hidden;
-    /* overflow-x: visible; */
+    overflow-x: visible;
     height: fit-content;
     display: flex;
     justify-content: flex-start;

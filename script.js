@@ -91,8 +91,7 @@ function loadingAnimation() {
 
     tl.from('#hero1 h1', {
         opacity:0,
-        y:30
-    }, "-=.8")
+    }, "-=.85")
     tl.from('.page2', {
         opacity: 0,
     })
