@@ -1,3 +1,23 @@
+@font-face {
+    font-family: "Plain Light";
+    src: url(./fonts/plain-regular-webfont.ttf);
+}
+
+@font-face {
+    font-family: "Plain Light";
+    src: url(./fonts/plain-light-webfont.ttf);
+}
+
+@font-face {
+    font-family: "silk serif";
+    src: url(./fonts/silkserif-regularitalic-webfont.ttf);
+}
+
+@font-face {
+    font-family: "silk serif";
+    src: url(./fonts/silkserif-lightitalic-webfont.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +28,7 @@
 
 html,
 body {
-    overflow: hidden;
+    overflow-y: hidden;
     height: 100%;
     width: 100%;
     cursor: default;
@@ -212,7 +232,7 @@ body::-webkit-scrollbar {
     position: relative;
     padding-top: 10vh;
     cursor: default;
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
 }
 
 .video-container {
@@ -577,7 +597,7 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-.footer h1 {
+.footer h1{
     font-size: 7vw;
     letter-spacing: .3vw;
     text-transform: uppercase;

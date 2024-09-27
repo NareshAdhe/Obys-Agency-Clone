@@ -64,10 +64,6 @@ function loadingAnimation() {
         delay: 2.8
     })
 
-    tl.to('html,body', {
-        overflowY: "visible"
-    })
-
     tl.to(".loader", {
         opacity: 0
     })
@@ -181,8 +177,30 @@ function hoverAnimation() {
     })
 }
 
+function footerAnimation() {
+    let text = "";
+    document.querySelector(".footer h1").textContent.split("").forEach((letter) => {
+        text += `<span>${letter}</span>`
+    });
+    document.querySelector(".footer h1").innerHTML = text;
+    document.querySelector(".footer h1").addEventListener("mouseenter", (e) => {
+        gsap.to(".footer h1 span",{
+            opacity:0,
+            stagger:0.05
+        })
+    })
+    document.querySelector(".footer h1").addEventListener("mouseleave", (e) => {
+        gsap.to(".footer h1 span",{
+            opacity:1,
+            stagger:0.1,
+            delay:0.35,
+        })
+    })
+}
+
 loadingAnimation();
 cursor();
 locomotiveAnimation();
 sheryAnimation();
 hoverAnimation();
+footerAnimation();
